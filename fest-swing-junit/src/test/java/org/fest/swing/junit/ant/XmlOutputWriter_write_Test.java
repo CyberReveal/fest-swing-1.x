@@ -18,7 +18,6 @@ package org.fest.swing.junit.ant;
 import static org.easymock.EasyMock.expect;
 import static org.easymock.classextension.EasyMock.createMock;
 import static org.fest.assertions.Assertions.assertThat;
-import static org.fest.util.Systems.LINE_SEPARATOR;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -26,6 +25,7 @@ import java.io.IOException;
 import org.fest.mocks.EasyMockTemplate;
 import org.fest.swing.junit.xml.XmlDocument;
 import org.fest.swing.junit.xml.XmlNode;
+import org.fest.util.SystemProperties;
 import org.junit.Test;
 
 /**
@@ -72,10 +72,10 @@ public class XmlOutputWriter_write_Test extends XmlOutputWriter_TestCase {
 
   private String expectedXml() {
     StringBuilder expected = new StringBuilder();
-    expected.append("<?xml version=\"1.0\" encoding=\"UTF-8\" ?>").append(LINE_SEPARATOR)
-            .append("<root>").append(LINE_SEPARATOR)
-            .append("  <child />").append(LINE_SEPARATOR)
-            .append("</root>").append(LINE_SEPARATOR);
+    expected.append("<?xml version=\"1.0\" encoding=\"UTF-8\" ?>").append(SystemProperties.lineSeparator())
+            .append("<root>").append(SystemProperties.lineSeparator())
+            .append("  <child />").append(SystemProperties.lineSeparator())
+            .append("</root>").append(SystemProperties.lineSeparator());
     return expected.toString();
   }
 

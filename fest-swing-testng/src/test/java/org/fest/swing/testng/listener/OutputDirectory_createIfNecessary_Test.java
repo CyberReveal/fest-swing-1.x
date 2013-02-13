@@ -25,7 +25,7 @@ import static org.fest.util.Strings.concat;
 import java.io.File;
 
 import org.fest.mocks.EasyMockTemplate;
-import org.fest.util.FilesException;
+import org.fest.util.IORuntimeException;
 import org.junit.*;
 import org.testng.ITestContext;
 
@@ -88,7 +88,7 @@ public class OutputDirectory_createIfNecessary_Test {
     }.run();
   }
 
-  @Test(expected = FilesException.class)
+  @Test(expected = IORuntimeException.class)
   public void should_throw_error_if_output_folder_cannot_be_created() {
     new EasyMockTemplate(context) {
       @Override protected void expectations() {

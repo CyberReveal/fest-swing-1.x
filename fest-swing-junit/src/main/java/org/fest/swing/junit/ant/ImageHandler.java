@@ -17,7 +17,7 @@ package org.fest.swing.junit.ant;
 
 import static java.io.File.separator;
 import static java.util.logging.Level.SEVERE;
-import static org.fest.util.Strings.isEmpty;
+import static org.fest.util.Strings.isNullOrEmpty;
 
 import java.awt.image.BufferedImage;
 import java.util.logging.Logger;
@@ -93,8 +93,8 @@ public final class ImageHandler {
 
   // makes testing easier
   static String decodeBase64AndSaveAsPng(String encoded, String path, ImageDecoder decoder, ImageFileWriter writer) {
-    if (isEmpty(encoded)) return EMPTY_STRING;
-    if (isEmpty(path)) return EMPTY_STRING;
+    if (isNullOrEmpty(encoded)) return EMPTY_STRING;
+    if (isNullOrEmpty(path)) return EMPTY_STRING;
     String realPath = path.replace("/", separator);
     BufferedImage image = decodeBase64(encoded, decoder);
     try {

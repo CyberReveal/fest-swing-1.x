@@ -16,13 +16,13 @@
 package org.fest.swing.junit.ant;
 
 import static org.apache.tools.ant.util.FileUtils.close;
-import static org.fest.util.Systems.LINE_SEPARATOR;
 
 import java.io.*;
 
 import org.apache.tools.ant.BuildException;
 import org.apache.tools.ant.util.DOMElementWriter;
 import org.fest.swing.junit.xml.XmlNode;
+import org.fest.util.SystemProperties;
 
 /**
  * Understands writing the contents of an XML document to an <code>{@link OutputStream}</code>.
@@ -54,7 +54,7 @@ class XmlOutputWriter {
     try {
       writer = new BufferedWriter(new OutputStreamWriter(out, CHARSET));
       writer.write(XML_HEADER);
-      writer.write(LINE_SEPARATOR);
+      writer.write(SystemProperties.lineSeparator());
       xmlWriter.write(xml.target(), writer, 0, INDENT);
       writer.flush();
     } catch (IOException ex) {

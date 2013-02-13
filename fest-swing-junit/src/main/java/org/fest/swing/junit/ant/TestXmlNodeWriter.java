@@ -21,7 +21,7 @@ import static org.fest.swing.junit.ant.CommonConstants.UNKNOWN;
 import static org.fest.swing.junit.ant.Tests.*;
 import static org.fest.swing.junit.xml.XmlAttribute.name;
 import static org.fest.swing.junit.xml.XmlAttributes.attributes;
-import static org.fest.util.Strings.isEmpty;
+import static org.fest.util.Strings.isNullOrEmpty;
 import junit.framework.Test;
 
 import org.fest.swing.junit.xml.XmlNode;
@@ -62,7 +62,7 @@ class TestXmlNodeWriter {
 
   TestXmlNodeWriter writeError(XmlNode target, Throwable error) {
     String message = error.getMessage();
-    if (!isEmpty(message)) target.addAttribute(name(ATTR_MESSAGE).value(message));
+    if (!isNullOrEmpty(message)) target.addAttribute(name(ATTR_MESSAGE).value(message));
     target.addAttribute(name(ATTR_TYPE).value(error.getClass().getName()));
     return this;
   }

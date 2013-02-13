@@ -17,6 +17,7 @@ package org.fest.swing.junit.ant;
 
 import static org.fest.assertions.Assertions.assertThat;
 
+import java.util.Arrays;
 import java.util.Collection;
 
 import org.fest.util.Collections;
@@ -37,7 +38,7 @@ public class ImageHandler_decodeBase64AndSaveAsPng_Test extends ImageHandler_Tes
 
   @Parameters
   public static Collection<Object[]> emptyOrNull() {
-    return Collections.list(new Object[][] { { "" }, { null } });
+    return Arrays.asList(new Object[][] { { "" }, { null } });
   }
 
   public ImageHandler_decodeBase64AndSaveAsPng_Test(String val) {

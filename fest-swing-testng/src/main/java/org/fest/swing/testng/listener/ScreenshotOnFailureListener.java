@@ -94,7 +94,7 @@ public class ScreenshotOnFailureListener extends AbstractTestListener {
   @Override public void onTestFailure(ITestResult result) {
     if (!ready || !isGUITest(result)) return;
     String screenshotFileName = takeScreenshotAndReturnFileName(result);
-    if (isEmpty(screenshotFileName)) return;
+    if (isNullOrEmpty(screenshotFileName)) return;
     logger.info(concat("Screenshot of desktop saved as: ", quote(screenshotFileName)));
     Reporter.setCurrentTestResult(result);
     Reporter.log(concat("<a href=\"", screenshotFileName, "\">Screenshot</a>"));

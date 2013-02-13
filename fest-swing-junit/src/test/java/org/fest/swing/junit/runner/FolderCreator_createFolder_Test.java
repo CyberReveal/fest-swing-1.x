@@ -25,7 +25,7 @@ import java.io.IOException;
 
 import org.easymock.EasyMock;
 import org.fest.mocks.EasyMockTemplate;
-import org.fest.util.FilesException;
+import org.fest.util.IORuntimeException;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
@@ -79,7 +79,7 @@ public class FolderCreator_createFolder_Test {
         try {
           creator.createFolder(f, "hello");
           fail("expecting exception");
-        } catch (FilesException e) {
+        } catch (IORuntimeException e) {
           assertThat(e).hasMessage("Unable to create directory 'hello'");
           assertThat(e.getCause()).isSameAs(error);
         }

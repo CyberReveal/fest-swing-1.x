@@ -17,11 +17,12 @@ package org.fest.swing.junit.runner;
 
 import static java.io.File.separator;
 import static org.fest.util.Files.delete;
-import static org.fest.util.Strings.*;
+import static org.fest.util.Strings.concat;
+import static org.fest.util.Strings.quote;
 
 import java.io.File;
 
-import org.fest.util.FilesException;
+import org.fest.util.IORuntimeException;
 
 /**
  * Understands creation of folders.
@@ -38,7 +39,7 @@ class FolderCreator {
       imageFolder.mkdir();
       return imageFolder;
     } catch (Exception e) {
-      throw new FilesException(concat("Unable to create directory ", quote(name)), e);
+      throw new IORuntimeException(concat("Unable to create directory ", quote(name)), e);
     }
   }
 }

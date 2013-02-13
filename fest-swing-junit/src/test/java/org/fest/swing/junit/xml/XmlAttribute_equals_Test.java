@@ -16,8 +16,8 @@
 package org.fest.swing.junit.xml;
 
 import static org.fest.assertions.Assertions.assertThat;
-import static org.fest.util.Collections.list;
 
+import java.util.Arrays;
 import java.util.Collection;
 
 import org.junit.Before;
@@ -44,7 +44,7 @@ public class XmlAttribute_equals_Test {
 
   @Parameters
   public static Collection<Object[]> notEqualAttributes() {
-    return list(new Object[][] {
+    return Arrays.asList(new Object[][] {
         { XmlAttribute.name("firstName").value("Leia") },
         { XmlAttribute.name("first").value("Anakin") },
         { XmlAttribute.name("lastName").value("Skywalker") }

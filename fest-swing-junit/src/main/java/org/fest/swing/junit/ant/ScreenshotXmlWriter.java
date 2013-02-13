@@ -54,7 +54,7 @@ class ScreenshotXmlWriter {
     String testMethod = testMethodNameFrom(test);
     if (!guiTestRecognizer.isGUITest(testClass, testMethod)) return;
     String image = takeScreenshotAndReturnEncoded();
-    if (isEmpty(image)) return;
+    if (isNullOrEmpty(image)) return;
     writeScreenshotFileName(target, image, imageFileName(testClass, testMethod));
   }
 

@@ -40,7 +40,7 @@ public class TimestampFormatter_format_Test {
   @Test
   public void should_format_date_using_ISO8601_pattern() {
     String formatted = formatter.format(due().getTime());
-    assertThat(formatted).isEqualTo("2009-06-13T15:06:10");
+    assertThat(formatted).isEqualTo("2009-06-13T07:06:10");
   }
 
   private Calendar due() {

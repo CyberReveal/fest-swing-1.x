@@ -19,7 +19,7 @@ import static org.fest.util.Strings.*;
 
 import java.io.File;
 
-import org.fest.util.FilesException;
+import org.fest.util.IORuntimeException;
 import org.testng.ITestContext;
 
 /**
@@ -36,7 +36,7 @@ class OutputDirectory {
   }
 
   boolean hasPath() {
-    return !isEmpty(path);
+    return !isNullOrEmpty(path);
   }
 
   String path() { return path; }
@@ -45,6 +45,6 @@ class OutputDirectory {
     File f = new File(path);
     if (f.isDirectory()) return;
     if (f.mkdirs()) return;
-    throw new FilesException(concat("Unable to create output directory ", path));
+    throw new IORuntimeException(concat("Unable to create output directory ", path));
   }
 }

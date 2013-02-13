@@ -15,7 +15,7 @@
  */
 package org.fest.swing.junit.runner;
 
-import static org.fest.util.Arrays.isEmpty;
+import static org.fest.util.Arrays.isNullOrEmpty;
 import static org.fest.util.Strings.concat;
 
 import java.lang.reflect.Method;
@@ -39,7 +39,7 @@ public final class Formatter {
   }
 
   private static String format(Class<?>[] parameterTypes) {
-    if (isEmpty(parameterTypes)) return "";
+    if (isNullOrEmpty(parameterTypes)) return "";
     StringBuilder b = new StringBuilder("(");
     for (int i = 0; i < parameterTypes.length; i++) {
       b.append(parameterTypes[i].getName());
