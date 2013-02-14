@@ -38,7 +38,7 @@ import org.fest.swing.timing.Condition;
  * @author Yvonne Wang
  * @author Alex Ruiz
  */
-public final class ComponentFoundCondition extends Condition {
+public class ComponentFoundCondition extends Condition {
   private final ComponentFinder finder;
   private final ComponentMatcher matcher;
   private final Container root;
