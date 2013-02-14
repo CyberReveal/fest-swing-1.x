@@ -1,0 +1,3 @@
+This file should contain all changes with cause this fork to depart from the original:
+
+- Made ComponentFoundCondition class not final
