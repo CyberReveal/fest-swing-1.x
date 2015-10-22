@@ -41,7 +41,7 @@ public class JTabbedPaneFormatter extends ComponentFormatterTemplate {
   protected @Nonnull String doFormat(@Nonnull Component c) {
     JTabbedPane tabbedPane = (JTabbedPane) c;
     String format = "%s[name=%s, selectedTabIndex=%d, selectedTabTitle=%s, tabCount=%d, tabTitles=%s, enabled=%b, visible=%s, showing=%s";
-    return String.format(format, tabbedPane.getClass().getName(), tabbedPane.getSelectedIndex(),
+    return String.format(format, tabbedPane.getClass().getName(), tabbedPane.getName(), tabbedPane.getSelectedIndex(),
         selectedTab(tabbedPane), tabbedPane.getTabCount(), Arrays.format(tabTitles(tabbedPane)),
         tabbedPane.isEnabled(), tabbedPane.isVisible(), tabbedPane.isShowing());
   }

@@ -44,7 +44,7 @@ public class JComboBoxFormatter extends ComponentFormatterTemplate {
     JComboBox comboBox = (JComboBox) c;
     String format = "%s[name=%s, selectedItem=%s, contents=%s, editable=%b, enabled=%b, visible=%b, showing=%b]";
     return String.format(format, comboBox.getClass().getName(), quote(comboBox.getName()),
-        quote(comboBox.getSelectedIndex()), Arrays.format(contentsOf(comboBox)), comboBox.isEditable(),
+        quote(comboBox.getSelectedIndex()), Arrays.format(contentsOf(comboBox)), comboBox.isEditable(), comboBox.isEnabled(),
         comboBox.isVisible(), comboBox.isShowing());
   }
 
