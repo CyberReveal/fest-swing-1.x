@@ -354,13 +354,15 @@ public class AWT {
         // Start another thread which attempts to get the tree lock.
         // If it can't get the tree lock, then there is a pop-up active in the current tree.
         // Any component can provide the tree lock.
+        // BSmith 15/02/2017 Updated to a 5 second wait because we are having issues where this code is incorrectly
+        // returning true, I am hoping a longer wait will help
         Object treeLock = checkNotNull(frames[0].getTreeLock());
         ThreadStateChecker checker = new ThreadStateChecker(treeLock);
         try {
             checker.start();
             // wait a little bit for the checker to finish
             if (checker.isAlive()) {
-                checker.join(100);
+                checker.join(5000);
             }
             return checker.isAlive();
         } catch (InterruptedException e) {
